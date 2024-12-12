@@ -2,9 +2,6 @@
 
 ## Setup Instructions
 
-
-
-
 1. Create a Firebase project:
    - Go to [Firebase Console](https://console.firebase.google.com/)
    - Click "Add project"
