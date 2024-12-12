@@ -1,5 +1,5 @@
 import React from 'react';
-import { LogOut, Menu } from 'lucide-react';
+import { LogOut, Menu, Database } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
 
 export const Navbar = () => {
@@ -10,7 +10,8 @@ export const Navbar = () => {
     <nav className="bg-indigo-600 text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between h-16">
-          <div className="flex items-center">
+          <div className="flex items-center space-x-2">
+            <Database className="h-6 w-6" />
             <h1 className="text-xl font-bold">Catálogo</h1>
           </div>
           

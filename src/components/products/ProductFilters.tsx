@@ -1,6 +1,6 @@
 import React from 'react';
 import { Search } from 'lucide-react';
-import { Product } from '../../types';
+import { SectionSelect } from '../sections/SectionSelect';
 
 interface ProductFiltersProps {
   search: string;
@@ -35,16 +35,12 @@ export const ProductFilters: React.FC<ProductFiltersProps> = ({
       </div>
 
       <div className="flex flex-col sm:flex-row gap-4">
-        <select
-          className="flex-1 border rounded-lg px-3 py-2"
+        <SectionSelect
           value={section}
-          onChange={(e) => setSection(e.target.value)}
-        >
-          <option value="">Todas las secciones</option>
-          {sections.map((s) => (
-            <option key={s} value={s}>{s}</option>
-          ))}
-        </select>
+          onChange={setSection}
+          sections={sections}
+          className="flex-1"
+        />
 
         <select
           className="flex-1 border rounded-lg px-3 py-2"

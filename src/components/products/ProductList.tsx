@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useProducts } from '../../hooks/useProducts';
+import { useSections } from '../../hooks/useSections';
 import { ProductFilters } from './ProductFilters';
 import { ProductGrid } from './ProductGrid';
 import { ProductForm } from './ProductForm';
@@ -9,13 +10,13 @@ import { Product } from '../../types';
 
 export const ProductList = () => {
   const { products, loading } = useProducts();
+  const sections = useSections(products);
   const [search, setSearch] = useState('');
   const [section, setSection] = useState('');
   const [status, setStatus] = useState<'' | '0' | '1'>('');
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | undefined>();
 
-  const sections = [...new Set(products.map(p => p.section))];
   const filteredProducts = filterProducts(products, search, section, status);
 
   const handleEdit = (product: Product) => {
